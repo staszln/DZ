@@ -1,9 +1,0 @@
-first = 10
-second = 30
-print('+: answer =', first + second)
-print('-: answer =', first - second)
-print('*: answer =', first * second)
-print('/: answer =', first / second)
-print('**: answer =', first ** second)
-print('//: answer =', first // second)
-print('%: answer =', first % second)
