@@ -1,3 +1,69 @@
+"""
+2. Написать функцию которой передается один параметр - список строк my_list.
+Функция возвращает новый список в котором содержаться
+элементы из my_list у которых первый символ - буква "a".
+"""
+my_list = ['appps', 'i837242', '82937hd', '9898', 'sasd88']
+
+
+def str_with_first_a(in_list):
+    out_list = []
+    for word in in_list:
+        if word.startswith('a'):
+            out_list.append(word)
+    return out_list
+
+
+my_new_list = str_with_first_a(my_list)
+print('Вторая задача\n', my_new_list, '\n')
+
+
+
+"""
+4. Написать функцию которой передается один параметр - список строк my_list в
+котором могут быть как строки (type str) так и целые числа (type int).
+Функция возвращает новый список в котором содержаться только строки из my_list.
+"""
+
+my_list = ['appps', 44, 'i837242', 15, '82937hd', '9898', 'sasd88']
+
+
+def print_just_str(my_list):
+    out_list = []
+    for word in my_list:
+        if isinstance(word, str):
+            out_list.append(word)
+    return out_list
+
+
+my_new_list = print_just_str(my_list)
+print('Четвертая задача\n', my_new_list, '\n')
+
+
+"""
+7. Написать функцию которой передается два параметра - две строки.
+Функция возвращает список в который поместить те символы, которые есть в обеих строках,
+но в каждой только по одному разу.
+"""
+
+my_str1 = 'ajjkoop'
+my_str2 = 'koauraff'
+
+
+def intersection_str_once(str_1, str_2):
+    inter_list = list(set(str_1) & set(str_2))
+    answer = []
+    for letter in inter_list:
+        if str_1.count(letter) == 1 and str_2.count(letter) == 1:
+            answer.append(letter)
+    return answer
+
+
+print('Седьмая задача')
+print(intersection_str_once(my_str1, my_str2), '\n')
+
+
+
 my_list = ['appps', 'i837242', '82937hd', '9898', 'sasd88']
 print('Входящий список\n', my_list, '\n')
 
@@ -25,25 +91,6 @@ my_new_list = my_change_list(my_list)
 print('Первая задача\n', my_new_list, '\n')
 
 """
-2. Написать функцию которой передается один параметр - список строк my_list.
-Функция возвращает новый список в котором содержаться
-элементы из my_list у которых первый символ - буква "a".
-"""
-
-
-def str_with_first_a(in_list):
-    out_list = []
-    for word in in_list:
-        if word[0] == 'a':
-            out_list.append(word)
-    return out_list
-
-
-my_new_list = str_with_first_a(my_list)
-print('Вторая задача\n', my_new_list, '\n')
-
-
-"""
 3. Написать функцию которой передается один параметр - список строк my_list.
 Функция возвращает новый список в котором содержаться
 элементы из my_list в которых есть символ - буква "a" на любом месте.
@@ -61,24 +108,6 @@ def str_include_a(in_list):
 my_new_list = str_include_a(my_list)
 print('Третья задача\n', my_new_list, '\n')
 
-
-"""
-4. Написать функцию которой передается один параметр - список строк my_list в
-котором могут быть как строки (type str) так и целые числа (type int).
-Функция возвращает новый список в котором содержаться только строки из my_list.
-"""
-
-
-def print_just_str(my_list):
-    out_list = []
-    for word in my_list:
-        if str(word).isalpha():
-            out_list.append(word)
-    return out_list
-
-
-my_new_list = print_just_str(my_list)
-print('Четвертая задача\n', my_new_list, '\n')
 
 
 """
@@ -118,27 +147,7 @@ def intersection_str(str_1, str_2):
 my_new_list = intersection_str(my_str1, my_str2)
 print('Шестая задача\n', my_new_list, '\n')
 
-"""
-7. Написать функцию которой передается два параметра - две строки.
-Функция возвращает список в который поместить те символы, которые есть в обеих строках,
-но в каждой только по одному разу.
-"""
 
-my_str1 = 'ajjkoop'
-my_str2 = 'koaurff'
-
-
-def intersection_str_once(str_1, str_2):
-    inter_list = list(set(str_1) & set(str_2))
-    answer = ''
-    for letter in inter_list:
-        if str_1.count(letter) == 1:
-            answer += letter
-    return answer
-
-
-print('Седьмая задача')
-print(intersection_str_once(my_str1, my_str2), '\n')
 
 """
 8. Даны списки names и domains (создать самостоятельно).
